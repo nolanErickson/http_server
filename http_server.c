@@ -12,7 +12,7 @@
 #include <signal.h>
 
 #define LOCALPORT "8080"
-#define BACKLOG 5
+#define BACKLOG 10
 
 // getaddrinfo();
 // socket();
