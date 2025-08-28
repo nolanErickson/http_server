@@ -11,7 +11,7 @@
 #include <sys/wait.h>
 #include <signal.h>
 
-#define LOCALPORT "6969"
+#define LOCALPORT "8080"
 #define BACKLOG 5
 
 // getaddrinfo();
