@@ -32,6 +32,9 @@ socklen_t client_size;
 struct sockaddr_storage client_addr;
 struct addrinfo hints, *servinfo, *p;
 
+
+//define in child_handler.h
+//signal handler to reap dead child processes
 void sigchld_handler(int s) {
 
 	(void)s;
@@ -45,6 +48,7 @@ void sigchld_handler(int s) {
 	}
 }
 
+//define in child_handler.h
 // get sockaddr, IPv4 or IPv6:
 void *get_in_addr(struct sockaddr *sa) {
 	if (sa->sa_family == AF_INET) {
@@ -105,7 +109,12 @@ int main() {
 	}
 
 	printf("server: waiting for connections...\n");
-//server.h
+//end server.h implememntation
+//atp server has been established
+//begin haandling client connections
+
+
+//client_handler.h
 
 	//register child process handler to prevent zombie processes
 	sa.sa_handler = sigchld_handler;
@@ -135,6 +144,8 @@ int main() {
 		close(client_fd);
 
 	}
+
+//end client handler implementation
 	return 0;
 		
 
